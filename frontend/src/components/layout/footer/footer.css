@@ -1,0 +1,56 @@
+footer {
+  background: #111;
+  color: #ccc;
+  padding: 2rem 1.5rem;
+  margin-top: 2rem;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  text-align: center;
+}
+
+.brand h3 {
+  color: #fff;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.5px;
+}
+
+.brand p {
+  color: #aaa;
+  font-size: 0.9rem;
+  max-width: 300px;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+
+.links a:hover {
+  color: white;
+  transform: translateY(-2px);
+}
+
+.copy {
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid #222;
+  padding-top: 1rem;
+  width: 100%;
+}
