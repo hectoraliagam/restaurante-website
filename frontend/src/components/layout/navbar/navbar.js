@@ -5,13 +5,20 @@ import { BaseComponent } from "../../../core/BaseComponent.js";
 class NavBar extends BaseComponent {
   async connectedCallback() {
     await this.loadFiles(import.meta.url, "navbar.html", "navbar.css");
-    console.log("URL base:", import.meta.url);
 
     const btn = this.shadowRoot.querySelector(".hamburger");
     const menu = this.shadowRoot.querySelector(".links");
 
     btn.addEventListener("click", () => {
       menu.classList.toggle("open");
+      btn.classList.toggle("active");
+    });
+
+    this.shadowRoot.querySelectorAll("[data-link]").forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("open");
+        btn.classList.remove("active");
+      });
     });
 
     this.updateActiveRoute();

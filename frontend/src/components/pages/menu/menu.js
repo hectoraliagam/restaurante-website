@@ -9,7 +9,7 @@ class MenuPage extends BaseComponent {
     const base = import.meta.url.replace("menu.js", "");
     const data = await fetch(base + "menu.json").then(r => r.json());
 
-    const container = this.querySelector("#menu-content");
+    const container = this.shadowRoot.querySelector("#menu-content");
 
     data.categories.forEach(category => {
       const div = document.createElement("div");
