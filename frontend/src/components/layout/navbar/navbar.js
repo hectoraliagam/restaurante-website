@@ -1,29 +1,11 @@
-class NavBar extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-  }
+//  src/components/layout/navbar/navbar.js
 
+import { BaseComponent } from "../../../core/BaseComponent.js";
+
+class NavBar extends BaseComponent {
   async connectedCallback() {
-    const base = import.meta.url.replace("navbar.js", "");
-    const html = await fetch(base + "navbar.html").then(r => r.text());
-    const css = await fetch(base + "navbar.css").then(r => r.text());
-
-    this.shadowRoot.innerHTML = `
-      <style>${css}</style>
-      ${html}
-    `;
-
-    this.shadowRoot.querySelectorAll("[data-link]").forEach(link => {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        window.router.navigate(link.getAttribute("data-link"));
-      });
-    });
-
-    this.updateActiveRoute();
-
-    window.addEventListener("popstate", () => this.updateActiveRoute());
+    await this.loadFiles(import.meta.url, "navbar.html", "navbar.css");
+    console.log("URL base:", import.meta.url);
 
     const btn = this.shadowRoot.querySelector(".hamburger");
     const menu = this.shadowRoot.querySelector(".links");
@@ -31,6 +13,9 @@ class NavBar extends HTMLElement {
     btn.addEventListener("click", () => {
       menu.classList.toggle("open");
     });
+
+    this.updateActiveRoute();
+    window.addEventListener("popstate", () => this.updateActiveRoute());
   }
 
   updateActiveRoute() {

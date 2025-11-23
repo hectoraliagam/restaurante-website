@@ -1,25 +1,21 @@
-class MenuPage extends HTMLElement {
-  async connectedCallback() {
-    const base = import.meta.url.replace("menu.js", "");
-    
-    const [html, css, json] = await Promise.all([
-      fetch(base + "menu.html").then(r => r.text()),
-      fetch(base + "menu.css").then(r => r.text()),
-      fetch(base + "menu.json").then(r => r.json())
-    ]);
+//  src/components/pages/menu/menu.js
 
-    this.innerHTML = `
-      <style>${css}</style>
-      ${html}
-    `;
+import { BaseComponent } from "../../../core/BaseComponent.js";
+
+class MenuPage extends BaseComponent {
+  async connectedCallback() {
+    await this.loadFiles(import.meta.url, "menu.html", "menu.css");
+
+    const base = import.meta.url.replace("menu.js", "");
+    const data = await fetch(base + "menu.json").then(r => r.json());
 
     const container = this.querySelector("#menu-content");
 
-    json.categories.forEach(category => {
-      const section = document.createElement("div");
-      section.classList.add("menu-category");
+    data.categories.forEach(category => {
+      const div = document.createElement("div");
+      div.className = "menu-category";
 
-      section.innerHTML = `
+      div.innerHTML = `
         <h2>${category.name}</h2>
         <div class="grid">
           ${category.items.map(item => `
@@ -33,7 +29,7 @@ class MenuPage extends HTMLElement {
         </div>
       `;
 
-      container.appendChild(section);
+      container.appendChild(div);
     });
   }
 }

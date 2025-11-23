@@ -1,16 +1,10 @@
-class ReservasPage extends HTMLElement {
+//  src/components/pages/reservas/reservas.js
+
+import { BaseComponent } from "../../../core/BaseComponent.js";
+
+class ReservasPage extends BaseComponent {
   async connectedCallback() {
-    const base = import.meta.url.replace("reservas.js", "");
-
-    const [html, css] = await Promise.all([
-      fetch(base + "reservas.html").then(r => r.text()),
-      fetch(base + "reservas.css").then(r => r.text())
-    ]);
-
-    this.innerHTML = `
-      <style>${css}</style>
-      ${html}
-    `;
+    await this.loadFiles(import.meta.url, "reservas.html", "reservas.css");    
 
     const form = this.querySelector("#reservaForm");
     const msg = this.querySelector("#msg");
