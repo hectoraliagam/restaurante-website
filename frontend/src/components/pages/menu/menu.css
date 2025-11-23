@@ -1,0 +1,86 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* HERO */
+.menu-hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #111;
+  color: white;
+}
+
+.menu-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.menu-hero p {
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+
+/* MENU CONTAINER */
+.menu-container {
+  padding: 3rem 2rem;
+  background: #0e0e0e;
+  color: white;
+}
+
+.menu-category {
+  margin-bottom: 4rem;
+}
+
+.menu-category h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid #c59d5f;
+  padding-left: 1rem;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* DISH ITEM */
+.dish {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid #222;
+  transition: 0.3s;
+}
+
+.dish:hover {
+  transform: translateY(-6px);
+  background: #1e1e1e;
+}
+
+.dish img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.dish h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.dish p {
+  opacity: 0.85;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-weight: bold;
+  color: #c59d5f;
+  font-size: 1.05rem;
+}

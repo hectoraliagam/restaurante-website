@@ -1,0 +1,57 @@
+{
+  "categories": [
+    {
+      "name": "Entradas",
+      "items": [
+        {
+          "name": "Bruschetta Clásica",
+          "description": "Pan artesanal con tomate fresco, albahaca y aceite de oliva.",
+          "price": 18,
+          "image": "https://images.unsplash.com/photo-1604908177067-3b24c798d063"
+        },
+        {
+          "name": "Ensalada Fresca",
+          "description": "Mezcla de verdes, queso feta, nueces y vinagreta balsámica.",
+          "price": 22,
+          "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe"
+        }
+      ]
+    },
+
+    {
+      "name": "Platos Fuertes",
+      "items": [
+        {
+          "name": "Filete Premium",
+          "description": "Corte angus con salsa de la casa y vegetales a la parrilla.",
+          "price": 48,
+          "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141"
+        },
+        {
+          "name": "Pasta Alfredo",
+          "description": "Pasta italiana con salsa cremosa, parmesano y toque de ajo.",
+          "price": 32,
+          "image": "https://images.unsplash.com/photo-1525755662778-989d0524087e"
+        }
+      ]
+    },
+
+    {
+      "name": "Postres",
+      "items": [
+        {
+          "name": "Tiramisú",
+          "description": "Clásico italiano con café y cacao.",
+          "price": 16,
+          "image": "https://images.unsplash.com/photo-1590080875516-48325e0a1f87"
+        },
+        {
+          "name": "Cheesecake de Frutos Rojos",
+          "description": "Cremoso, fresco y elaborado en casa.",
+          "price": 20,
+          "image": "https://images.unsplash.com/photo-1563805042-7684c019e1cb"
+        }
+      ]
+    }
+  ]
+}
